@@ -1,6 +1,14 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  // Github Pagesでデプロイするための設定
+  router: {
+    base: '/nuxt_app/',
+  },
+  generate: {
+    dir: 'docs',
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt_app',
