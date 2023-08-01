@@ -6,58 +6,34 @@
         <VuetifyLogo />
       </v-card>
       <v-card>
-        <v-card-title class="headline"> よおこそいらっしゃいませ </v-card-title>
+        <v-card-title class="headline">よおこそいらっしゃいませ </v-card-title>
         <v-card-text>
-          <p>当ページはVuetify + Nuxt.jsで構成されております。</p>
-          <p>
-            For more information on Vuetify, check out the
+          <p>プログラミングに関する記事を掲載しています。</p>
+          <span>
+            GitHubは
             <a
-              href="https://vuetifyjs.com"
+              href="https://github.com/rokiseth/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
+              こちら
+            </a>
+          </span>
+          <br />
+          <span>
+            このページのGitHubは
             <a
-              href="https://chat.vuetifyjs.com/"
+              href="https://github.com/rokiseth/nuxt_app/"
               target="_blank"
               rel="noopener noreferrer"
               title="chat"
             >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
+              こちら
+            </a>
+          </span>
           <hr class="my-3" />
-          当ページはVuetify + Nuxt.jsで構成されております。
+          <small>当ページはVuetify + Nuxt.jsで構成されております。</small>
           <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
         </v-card-text>
       </v-card>
     </v-col>
