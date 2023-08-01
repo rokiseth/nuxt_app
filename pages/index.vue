@@ -32,7 +32,10 @@
             </a>
           </span>
           <hr class="my-3" />
-          <small>当ページはVuetify + Nuxt.jsで構成されております。</small>
+          <small
+            >当ページはVuetify + Nuxt.js +
+            Bootstrapで構成されております。</small
+          >
           <br />
         </v-card-text>
       </v-card>
