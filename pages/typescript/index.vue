@@ -85,7 +85,7 @@ const items1: item[] = [
   {
     id: 2,
     title: 'プリミティブ型',
-    description: 'プリミティブ型とは何か',
+    description: '各リテラル',
     link: '/typescript/pages/1_2',
   },
   {

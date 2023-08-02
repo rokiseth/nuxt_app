@@ -20,16 +20,16 @@
       <v-icon class="mb-1">mdi-folder-file-outline</v-icon
       ><span class="filename">1_2.vue</span>
       <pre style="font-size: 14px">
-const binary = 0b1010; <span class="comment">// 2進数リテラル</span>
-const octal = 0o755; <span class="comment">// 8進数リテラル</span>
-const hexadecimal = 0xff; <span class="comment">// 16進数リテラル</span>
+const binary = <span class="highlight">0b1010</span>; <span class="comment">// 2進数リテラル</span>
+const octal = <span class="highlight">0o755</span>; <span class="comment">// 8進数リテラル</span>
+const hexadecimal = <span class="highlight">0xff</span>; <span class="comment">// 16進数リテラル</span>
 console.log(binary, octal, hexadecimal); <span class="comment">// 10 493 255</span>
 
-const big = 1e8; <span class="comment">// 1の後ろに0が8個</span>
-const small = 4e-5; <span class="comment">// 4の前に0が5個</span>
+const big = <span class="highlight">1e8</span>; <span class="comment">// 1の後ろに0が8個</span>
+const small = <span class="highlight">4e-5</span>; <span class="comment">// 4の前に0が5個</span>
 console.log(big, small); <span class="comment">// 100000000 0.00004</span>
 
-const million = 1_000_000; <span class="comment">// この書き方も許される</span>
+const million = <span class="highlight">1_000_000</span>; <span class="comment">// この書き方も許される</span>
 console.log(million); <span class="comment">// 1000000</span></pre>
       <p class="text-h5" style="font-weight: bold; margin-top: 40px">
         <span class="title">▍</span>任意精度整数（BigInt）
@@ -42,7 +42,7 @@ console.log(million); <span class="comment">// 1000000</span></pre>
       <v-icon class="mb-1">mdi-folder-file-outline</v-icon
       ><span class="filename">1_2.vue</span>
       <pre style="font-size: 14px">
-const bignum: bigint = (123n + 456n) * 2n; <span class="comment">// BigIntリテラル</span>
+const bignum: <span class="highlight">bigint</span> = (123n + 456n) * 2n; <span class="comment">// BigIntリテラル</span>
 console.log(bignum); <span class="comment">// 1158n</span>
 
 const result = 5n / 2n; <span class="comment">// 丸め処理がされる</span>
@@ -58,15 +58,14 @@ console.log(result); <span class="comment">// 2n</span></pre>
       <v-icon class="mb-1">mdi-folder-file-outline</v-icon
       ><span class="filename">1_2.vue</span>
       <pre style="font-size: 14px">
-const str1: string = 'Hello'; <span class="comment">// 文字列リテラル</span>
-const str2: string = 'world!';
+const str1: <span class="highlight">string</span> = 'Hello'; <span class="comment">// 文字列リテラル</span>
+const str2: <span class="highlight">string</span> = 'world!';
 console.log(str1 + ',' + str2); <span class="comment">// Hello,world!</span>
 
-const message: string = `Hello
-world!`;
+const message: <span class="highlight">string</span> = <span class="highlight">`Hello<br>world!`</span><span class="highlight"></span>;
 console.log(message);
 
-console.log(`${str1}, ${str2}`); <span class="comment">// Hello, world!</span></pre>
+console.log(<span class="highlight">`${str1}, ${str2}`</span>); <span class="comment">// Hello, world!</span></pre>
       <p class="text-h5" style="font-weight: bold; margin-top: 40px">
         <span class="title">▍</span>真偽値リテラル、null、undefined
       </p>
@@ -76,42 +75,87 @@ console.log(`${str1}, ${str2}`); <span class="comment">// Hello, world!</span></
       </p>
       <v-icon class="mb-1">mdi-f-fiolderle-outline</v-icon
       ><span class="filename">1_2.vue</span>
-      <pre style="font-size: 14px">const no: boolean = false;
-const yes: boolean = true;
+      <pre
+        style="font-size: 14px"
+      >const no: <span class="highlight">boolean</span> = false;
+const yes: <span class="highlight">boolean</span> = true;
 console.log(yes, no); <span class="comment">// true false</span>
 
-const val1 = null;
-const val2 = undefined;
+const val1 = <span class="highlight">null</span>;
+const val2 = <span class="highlight">undefined</span>;
 console.log(val1, val2); <span class="comment">// null undefined</span>
 
-const n: null = null;
-const u: undefined = undefined;
+const n: <span class="highlight">null</span> = null;
+const u: <span class="highlight">undefined</span> = undefined;
 console.log(n, u); <span class="comment">// null undefined</span></pre>
       <p class="text-h5" style="font-weight: bold; margin-top: 40px">
         <span class="title">▍</span>プリミティブ同士の変換
       </p>
       <hr style="margin-bottom: 20px" />
       <p>
-        nullとundefinedがあるが、TypeScriptではundefinedの方がサポートが手厚い。<br />
+        【暗黙の変換】<br />
+        lineが文字列なので、(line + 1000)とするときに型変換が行われる。<br />
+        【明示的な変換】<br />
+        Number関数で数値に変換する。
       </p>
       <v-icon class="mb-1">mdi-f-fiolderle-outline</v-icon
       ><span class="filename">1_2.vue</span>
-      <pre style="font-size: 14px">const no: boolean = false;
-const yes: boolean = true;
-console.log(yes, no); <span class="comment">// true false</span>
+      <pre style="font-size: 14px">
+import { createInterface } from 'readline';
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+rl.question('文字列を入力してください:', (line) => {
+  console.log(<span class="highlight">line</span> + 1000); <span class="comment">// 文字列として連結される</span>
+  rl.close();
+});
 
-const val1 = null;
-const val2 = undefined;
-console.log(val1, val2); <span class="comment">// null undefined</span>
+import { createInterface } from 'readline';
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+rl.question('文字列を入力してください:', (line) => {
+  console.log(<span class="highlight">Number(line)</span> + 1000); <span class="comment">// 数値として計算される</span>
+  rl.close();
+});
 
-const n: null = null;
-const u: undefined = undefined;
-console.log(n, u); <span class="comment">// null undefined</span></pre>
+<span class="comment">// その他明示的な変換</span>
+const num1 = <span class="highlight">Number(true)</span>;
+console.log(num1); <span class="comment">// 1</span>
+const num2 = <span class="highlight">Number(false)</span>;<span class="highlight"></span>
+console.log(num2); <span class="comment">// 0</span>
+const num3 = <span class="highlight">Number(null)</span>;
+console.log(num3); <span class="comment">// 0</span>
+const num4 = <span class="highlight">Number(undefined)</span>;
+console.log(num4); <span class="comment">// NaN</span>
+
+const bigint1 = <span class="highlight">BigInt('1234')</span>;
+console.log(bigint1); <span class="comment">// 1234n</span>
+const bigint2 = <span class="highlight">BigInt(1234)</span>;
+console.log(bigint2); <span class="comment">// 1234n</span>
+
+const str3 = <span class="highlight">String(1234.5)</span>;
+console.log(str3); <span class="comment">// 1234.5</span>
+
+<span class="comment">// 真偽値の変換は0,null,undefinedのようなものがfalseになる</span>
+console.log(<span class="highlight">Boolean(0)</span>); <span class="comment">// false</span></pre>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+// import { createInterface } from 'readline';
+// const rl = createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// rl.question('文字列を入力してください:', (line) => {
+//   console.log(line + 1000);
+//   rl.close();
+// });
+
 const value: number = 3 / 2;
 console.log(value); // 1.5
 
@@ -154,4 +198,25 @@ console.log(val1, val2); // null undefined
 const n: null = null;
 const u: undefined = undefined;
 console.log(n, u); // null undefined
+
+// その他明示的な変換
+const num1 = Number(true);
+console.log(num1); // 1
+const num2 = Number(false);
+console.log(num2); // 0
+const num3 = Number(null);
+console.log(num3); // 0
+const num4 = Number(undefined);
+console.log(num4); // NaN
+
+const bigint1 = BigInt('1234');
+console.log(bigint1); // 1234n
+const bigint2 = BigInt(1234);
+console.log(bigint2); // 1234n
+
+const str3 = String(1234.5);
+console.log(str3); // 1234.5
+
+// 真偽値の変換は0,null,undefinedのようなものがfalseになる
+console.log(Boolean(0)); // false
 </script>
