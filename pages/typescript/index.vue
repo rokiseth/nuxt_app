@@ -92,7 +92,7 @@ const items1: item[] = [
     id: 3,
     title: '演算子',
     description: 'さまざまな演算子',
-    link: '',
+    link: '/typescript/pages/1_3',
   },
   {
     id: 4,
