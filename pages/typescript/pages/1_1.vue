@@ -1,7 +1,7 @@
 <template>
   <div class="mt-3 ml-3 mr-3">
     <div class="text-left">
-      <p class="text-h5" style="font-weight: bold">
+      <p class="text-h5" style="font-weight: bold; margin-top: 40px">
         <span class="title">▍</span>型注釈とlet
       </p>
       <hr style="margin-bottom: 30px" />
