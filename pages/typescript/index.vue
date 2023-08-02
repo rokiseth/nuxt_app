@@ -70,49 +70,43 @@
 </template>
 <script setup lang="ts">
 interface item {
-  id: number
-  title: string
-  description: string
-  link: string
+  id: number;
+  title: string;
+  description: string;
+  link: string;
 }
 const items1: item[] = [
   {
     id: 1,
-    title: '文と式',
-    description: 'TypeScriptの基本',
+    title: '変数の宣言と使用',
+    description: '型注釈,letの特徴',
     link: '/typescript/pages/1_1',
   },
   {
     id: 2,
-    title: '変数の宣言と使用',
-    description: '識別子,let',
-    link: '',
+    title: 'プリミティブ型',
+    description: 'プリミティブ型とは何か',
+    link: '/typescript/pages/1_2',
   },
   {
     id: 3,
-    title: 'プリミティブ型',
-    description: 'プリミティブ型とは何か',
-    link: '',
-  },
-  {
-    id: 4,
     title: '演算子',
     description: 'さまざまな演算子',
     link: '',
   },
   {
-    id: 5,
+    id: 4,
     title: '基本的な制御構文',
     description: 'if,switch,while,forについて',
     link: '',
   },
   {
-    id: 6,
+    id: 5,
     title: 'FizzBuzz',
     description: '力試し',
     link: '',
   },
-]
+];
 const items2: item[] = [
   {
     id: 1,
@@ -162,5 +156,5 @@ const items2: item[] = [
     description: '力試し',
     link: '',
   },
-]
+];
 </script>

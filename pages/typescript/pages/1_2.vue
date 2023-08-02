@@ -2,7 +2,7 @@
   <div class="mt-3 ml-3 mr-3">
     <div class="text-left">
       <p class="text-h5" style="font-weight: bold">
-        <span class="title">▍</span>型注釈とlet
+        <span class="title">▍</span>プリミティブ型
       </p>
       <hr style="margin-bottom: 30px" />
       <p>
