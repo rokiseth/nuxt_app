@@ -82,17 +82,21 @@ console.log(<span class="highlight">val3 ?? 'val3はnullまたはundefined'</spa
 const val4 = false;
 console.log(<span class="highlight">val4 ?? 'val3はnullまたはundefined'</span>); <span class="comment">// false</span></pre>
       <p class="text-h5" style="font-weight: bold; margin-top: 40px">
-        <span class="title">▍</span>条件演算子
+        <span class="title">▍</span>条件演算子・その他の演算子
       </p>
       <hr style="margin-bottom: 20px" />
-      <p>
-        &&、||、!、??がある。<br />
-        !!は!(!)のことであり、使用例として値が存在しているかどうかを判定する。<br />
-        ??は||や&&と異なり、0やfalse、""の時は左辺を返し、nullとundefinedの時だけ右辺を返す。
-      </p>
+      <p>ビット演算では、|がOR演算、&がAND演算、~がビット反転である。</p>
       <v-icon class="mb-1">mdi-folder-file-outline</v-icon
       ><span class="filename">1_3.vue</span>
-      <pre style="font-size: 14px"></pre>
+      <pre style="font-size: 14px">
+const judge = true;
+const message = <span class="highlight">judge ? 'judgeはtrue' : 'judgeはfalse'</span>;
+console.log(message); <span class="comment">// judgeはtrue</span>
+
+// ビット演算
+console.log(<span class="highlight">0b0101 | 0b1100</span>); <span class="comment">// 13(0b1101)</span>
+console.log(<span class="highlight">0b0101 & 0b1100</span>); <span class="comment">// 4(0b0100)</span>
+console.log(<span class="highlight">~0b1100</span>); <span class="comment">// -13(1b0011)</span></pre>
     </div>
   </div>
 </template>
@@ -142,4 +146,13 @@ console.log(val3 ?? 'val3はnullまたはundefined'); // val3はnullまたはund
 
 const val4 = false;
 console.log(val4 ?? 'val3はnullまたはundefined'); // false
+
+const judge = true;
+const message = judge ? 'judgeはtrue' : 'judgeはfalse';
+console.log(message); // judgeはtrue
+
+// ビット演算
+console.log(0b0101 | 0b1100); // 13(0b1101)
+console.log(0b0101 & 0b1100); // 4(0b0100)
+console.log(~0b1100); // -13(1b0011)
 </script>
